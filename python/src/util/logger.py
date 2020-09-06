@@ -1,5 +1,7 @@
 from datetime import datetime
 
+# Simple logger with little customization
+
 levels = ['TRACE', 'DEBUG', 'INFO', 'WARN', 'ERROR', 'FATAL']
 
 level_stdout = 2
@@ -7,8 +9,11 @@ level_file = 0
 
 logfile = None
 
+# get string containing current date and time
 nowstrfdt = lambda: datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+# get string containing current time
 nowstrft = lambda: datetime.now().strftime('%H:%M:%S')
+# use a log file if a log file is open
 use_file = lambda: not logfile is None
 
 def log_stdout(level, message):
